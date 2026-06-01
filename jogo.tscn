@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bfmfmdb0w0fkm"]
+
+[ext_resource type="Texture2D" uid="uid://bdjvsrr5lxijc" path="res://background.png" id="1_kxg5b"]
+
+[node name="Jogo" type="Node2D" unique_id=326156858]
+
+[node name="Fundo" type="Sprite2D" parent="." unique_id=333537763]
+position = Vector2(578.5, 322.99997)
+scale = Vector2(3.596875, 3.6333332)
+texture = ExtResource("1_kxg5b")

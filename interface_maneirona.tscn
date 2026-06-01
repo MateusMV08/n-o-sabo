@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://cwxtsj4s0ebqu"]
+
+[ext_resource type="Script" uid="uid://cpym65bxgr1aq" path="res://interface_maneirona.gd" id="1_3y325"]
+[ext_resource type="Texture2D" uid="uid://bdjvsrr5lxijc" path="res://background.png" id="1_aj006"]
+[ext_resource type="FontFile" uid="uid://cprpx4kri2a4g" path="res://PressStart2P-Regular.ttf" id="2_3y325"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lca43"]
+texture = ExtResource("1_aj006")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drjxl"]
+bg_color = Color(0.16078432, 0.14509805, 0.62352943, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(10, 7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tonxv"]
+bg_color = Color(0.16078432, 0.5411765, 0.42745098, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(10, 7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5ul8"]
+bg_color = Color(0.16078432, 0.7882353, 0.16470589, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(10, 7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aj006"]
+bg_color = Color(0.16078432, 0.14509805, 0.62352943, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(10, 7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3y325"]
+bg_color = Color(0.50078404, 0.114949845, 0.17699838, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 2
+shadow_offset = Vector2(10, 7)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lca43"]
+bg_color = Color(0.54229546, 0, 0.09900396, 1)
+shadow_color = Color(5.0412014e-05, 4.1411247e-05, 0.0007931819, 1)
+shadow_size = 2
+shadow_offset = Vector2(10, 7)
+
+[node name="Menu" type="Control" unique_id=476968935]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3y325")
+
+[node name="Fundo" type="Panel" parent="." unique_id=524452587]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_lca43")
+
+[node name="Título" type="Label" parent="." unique_id=1812357083]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -541.5
+offset_top = -28.5
+offset_right = 541.5
+offset_bottom = 28.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 7
+theme_override_fonts/font = ExtResource("2_3y325")
+theme_override_font_sizes/font_size = 57
+text = "Super Runner Jumper"
+horizontal_alignment = 1
+
+[node name="Botões" type="VBoxContainer" parent="." unique_id=1915947028]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -162.5
+offset_top = -184.0
+offset_right = 162.5
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 54
+
+[node name="Jogar" type="Button" parent="Botões" unique_id=1215327148]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3y325")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_drjxl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tonxv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_s5ul8")
+text = "Jogar"
+
+[node name="Sair" type="Button" parent="Botões" unique_id=1457282505]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3y325")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_aj006")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3y325")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lca43")
+text = "Sair"
+
+[connection signal="pressed" from="Botões/Jogar" to="." method="_on_jogar_pressed"]
+[connection signal="pressed" from="Botões/Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Botões/Sair" to="." method="_on_button_pressed"]
