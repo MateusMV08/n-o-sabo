@@ -116,5 +116,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_lca43")
 text = "Sair"
 
 [connection signal="pressed" from="Botões/Jogar" to="." method="_on_jogar_pressed"]
-[connection signal="pressed" from="Botões/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="Botões/Sair" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Botões/Sair" to="." method="_on_sair_pressed"]

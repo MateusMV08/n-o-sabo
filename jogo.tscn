@@ -1,10 +1,155 @@
 [gd_scene format=3 uid="uid://bfmfmdb0w0fkm"]
 
 [ext_resource type="Texture2D" uid="uid://bdjvsrr5lxijc" path="res://background.png" id="1_kxg5b"]
+[ext_resource type="Script" uid="uid://dn666ydduom16" path="res://jogo.gd" id="1_yq54j"]
+[ext_resource type="Texture2D" uid="uid://vi50r8yyt473" path="res://foreground.png" id="3_1ap6j"]
+[ext_resource type="Texture2D" uid="uid://cxjtnkpmlm26r" path="res://middleground2.png" id="3_qn35j"]
+[ext_resource type="Texture2D" uid="uid://chiq8jf5gq8rk" path="res://middleground1.png" id="4_qn35j"]
+[ext_resource type="Texture2D" uid="uid://cvyxbscmovxki" path="res://player.png" id="6_8c340"]
+[ext_resource type="Script" uid="uid://cq4owfp16g7jm" path="res://jogador.gd" id="6_45nkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yq54j"]
+size = Vector2(1153, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45nkh"]
+size = Vector2(73, 102.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45nkh"]
+atlas = ExtResource("6_8c340")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysdx3"]
+atlas = ExtResource("6_8c340")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8pok"]
+atlas = ExtResource("6_8c340")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtw28"]
+atlas = ExtResource("6_8c340")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orj5g"]
+atlas = ExtResource("6_8c340")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01kpq"]
+atlas = ExtResource("6_8c340")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ka1p"]
+atlas = ExtResource("6_8c340")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7rhuj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45nkh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysdx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8pok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtw28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orj5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01kpq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ka1p")
+}],
+"loop": true,
+"name": &"pular",
+"speed": 5.0
+}]
 
 [node name="Jogo" type="Node2D" unique_id=326156858]
+script = ExtResource("1_yq54j")
 
 [node name="Fundo" type="Sprite2D" parent="." unique_id=333537763]
-position = Vector2(578.5, 322.99997)
-scale = Vector2(3.596875, 3.6333332)
+texture_filter = 1
+position = Vector2(1152.0001, 0)
+scale = Vector2(3.6062498, 3.6333332)
 texture = ExtResource("1_kxg5b")
+centered = false
+
+[node name="Fundo2" type="Sprite2D" parent="." unique_id=1164078189]
+texture_filter = 1
+scale = Vector2(3.6, 3.6277778)
+texture = ExtResource("1_kxg5b")
+centered = false
+
+[node name="FundoMeio2" type="Sprite2D" parent="." unique_id=1751221173]
+texture_filter = 1
+position = Vector2(1146.9999, -5)
+scale = Vector2(3.6218746, 3.2333333)
+texture = ExtResource("3_qn35j")
+centered = false
+
+[node name="FundoMeio" type="Sprite2D" parent="." unique_id=1888329869]
+texture_filter = 1
+position = Vector2(-1, -5)
+scale = Vector2(3.6312501, 3.2166667)
+texture = ExtResource("3_qn35j")
+centered = false
+
+[node name="FundoProfundo" type="Sprite2D" parent="." unique_id=1351222483]
+texture_filter = 1
+position = Vector2(1.0000005, -5)
+scale = Vector2(3.5906243, 3.2166665)
+texture = ExtResource("4_qn35j")
+centered = false
+
+[node name="FundoProfundo2" type="Sprite2D" parent="." unique_id=394933217]
+texture_filter = 1
+position = Vector2(1147.0001, -3)
+scale = Vector2(3.621874, 3.211111)
+texture = ExtResource("4_qn35j")
+centered = false
+
+[node name="Chao" type="Sprite2D" parent="." unique_id=159425022]
+texture_filter = 1
+position = Vector2(1095, 533)
+scale = Vector2(3.7812498, 2.5156238)
+texture = ExtResource("3_1ap6j")
+centered = false
+
+[node name="Chao2" type="Sprite2D" parent="." unique_id=1749863669]
+texture_filter = 1
+position = Vector2(0, 533)
+scale = Vector2(3.7968748, 2.5312502)
+texture = ExtResource("3_1ap6j")
+centered = false
+
+[node name="ChaoFisico" type="StaticBody2D" parent="." unique_id=275853378]
+
+[node name="CorpoChao" type="CollisionShape2D" parent="ChaoFisico" unique_id=1165460394]
+position = Vector2(579.5, 613)
+shape = SubResource("RectangleShape2D_yq54j")
+
+[node name="Jogador" type="CharacterBody2D" parent="." unique_id=708993681]
+script = ExtResource("6_45nkh")
+
+[node name="Corpo" type="CollisionShape2D" parent="Jogador" unique_id=860332707]
+position = Vector2(438.5, 524.25)
+shape = SubResource("RectangleShape2D_45nkh")
+
+[node name="Imagem" type="AnimatedSprite2D" parent="Jogador" unique_id=1219101685]
+texture_filter = 1
+position = Vector2(440, 541)
+scale = Vector2(4.513, 4.45)
+sprite_frames = SubResource("SpriteFrames_7rhuj")
+autoplay = "default"
