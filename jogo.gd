@@ -39,4 +39,3 @@ func _process(delta: float) -> void:
 
 	if $Chao2.position.x < -1152:
 		$Chao2.position.x = 1152
-		
