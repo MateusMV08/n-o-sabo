@@ -6,7 +6,6 @@ func _ready() -> void:
 	velocidade = 400
 
 func _process(delta: float) -> void:
-
 	$Fundo.position.x -= velocidade * delta
 	$Fundo2.position.x -= velocidade * delta
 
@@ -39,3 +38,10 @@ func _process(delta: float) -> void:
 
 	if $Chao2.position.x < -1152:
 		$Chao2.position.x = 1152
+		
+	$"Gerador de espinhos".position.x -= velocidade*delta
+	if $"Gerador de espinhos".position.x < -1152:
+		$"Gerador de espinhos".position.x = 1152 
+
+	if $"Gerador de espinhos".position.x < -1152:
+		$"Gerador de espinhos".position.x = 1152

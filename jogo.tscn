@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cq4owfp16g7jm" path="res://jogador.gd" id="6_45nkh"]
 [ext_resource type="Texture2D" uid="uid://b0cao607qnsv2" path="res://sonic_moon_walk_prime.png" id="7_ysdx3"]
 [ext_resource type="Script" uid="uid://b61gggimotub2" path="res://sonic.gd" id="8_t8pok"]
+[ext_resource type="Script" uid="uid://vjjyvv063320" path="res://gerador_de_espinhos.gd" id="10_mtw28"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yq54j"]
 size = Vector2(1153, 80)
@@ -249,6 +250,11 @@ shape = SubResource("RectangleShape2D_ysdx3")
 
 [node name="Sonico" type="AnimatedSprite2D" parent="Sonic" unique_id=716664672]
 visible = false
+position = Vector2(2, 7.4285717)
 sprite_frames = SubResource("SpriteFrames_qlqx7")
 animation = &"Sonico"
 autoplay = "Sonico"
+
+[node name="Gerador de espinhos" type="Node2D" parent="." unique_id=1528513594]
+position = Vector2(1178, 543)
+script = ExtResource("10_mtw28")
