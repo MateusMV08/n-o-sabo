@@ -243,13 +243,11 @@ scale = Vector2(1, 0.6730769)
 script = ExtResource("8_t8pok")
 
 [node name="Corpo2" type="CollisionShape2D" parent="Sonic" unique_id=1604302964]
-visible = false
 position = Vector2(-3, 2.9714355)
 scale = Vector2(1, 1.4857143)
 shape = SubResource("RectangleShape2D_ysdx3")
 
 [node name="Sonico" type="AnimatedSprite2D" parent="Sonic" unique_id=716664672]
-visible = false
 position = Vector2(2, 7.4285717)
 sprite_frames = SubResource("SpriteFrames_qlqx7")
 animation = &"Sonico"

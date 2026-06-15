@@ -11,8 +11,8 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor(): 
 		$Sonico.play("Sonico")
-		if Input.is_action_pressed("ui_select"): 
-				velocity.y = velocidade_pulo 
+		if Input.is_key_pressed(KEY_W): 
+			velocity.y = velocidade_pulo 
 	else: 
 		$Sonico.play("pulo_sonic")
 	move_and_slide() 
